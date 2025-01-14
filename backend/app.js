@@ -1,31 +1,34 @@
 const express = require("express");
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
+const dotenv = require("dotenv");
 const cors = require("cors");
+const conectarBancoDados = require("./database");
 
-// Rotas
-const colaboradorRoutes = require("./routes/colaboradorRoutes");
-const treinamentoRoutes = require("./routes/treinamentoRoutes");
-const matrizRoutes = require("./routes/matrizRoutes");
-const consolidacaoRoutes = require("./routes/consolidacaoRoutes");
+// Configuração do .env
+dotenv.config();
 
-// Inicialização do app
+// Conectar ao Banco de Dados
+conectarBancoDados();
+
 const app = express();
 
-// Middlewares
+// Middleware
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json()); // Interpretar JSON
 
-// Conectar às rotas
-app.use("/api/colaboradores", colaboradorRoutes);
-app.use("/api/treinamentos", treinamentoRoutes);
-app.use("/api/matriz", matrizRoutes);
-app.use("/api/consolidacao", consolidacaoRoutes);
+// Rotas
+app.get("/", (req, res) => {
+  res.send("API em funcionamento");
+});
 
-// Porta padrão
+// Importando rotas específicas
+app.use("/api/colaboradores", require("./routes/colaboradorRoutes"));
+app.use("/api/treinamentos", require("./routes/treinamentoRoutes"));
+app.use("/api/matriz", require("./routes/matrizRoutes"));
+app.use("/api/consolidacao", require("./routes/consolidacaoRoutes"));
+
+// Porta configurável pelo .env ou padrão
 const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
 });
-
-module.exports = app;

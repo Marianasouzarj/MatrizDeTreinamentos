@@ -1,16 +1,16 @@
 const mongoose = require("mongoose");
 
-const connectDB = async () => {
+const conectarBancoDados = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/MatrizDeTreinamentos", {
+    const conn = await mongoose.connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log(`MongoDB conectado: ${conn.connection.host}`);
+    console.log(`Conectado ao MongoDB: ${conn.connection.host}`);
   } catch (error) {
-    console.error(`Erro ao conectar no MongoDB: ${error.message}`);
-    process.exit(1); // Encerrar o servidor se falhar
+    console.error(`Erro ao conectar ao MongoDB: ${error.message}`);
+    process.exit(1); // Encerrar o processo em caso de erro
   }
 };
 
-module.exports = connectDB;
+module.exports = conectarBancoDados;

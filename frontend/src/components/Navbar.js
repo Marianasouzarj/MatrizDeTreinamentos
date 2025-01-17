@@ -1,25 +1,59 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../../assets/images/cjato02.png"; // Importando o logotipo
 
-const Navbar = () => {
+function Navbar() {
   return (
-    <nav>
-      <ul>
+    <nav style={styles.nav}>
+      {/* Exibindo o logotipo */}
+      <img src={logo} alt="Logotipo" style={styles.logo} />
+      <ul style={styles.menu}>
         <li>
-          <Link to="/">Matriz de Treinamento</Link>
+          <Link to="/cadastro-colaborador" style={styles.link}>
+            Cadastro Colaborador
+          </Link>
         </li>
         <li>
-          <Link to="/cadastro-colaborador">Cadastro de Colaboradores</Link>
+          <Link to="/cadastro-treinamento" style={styles.link}>
+            Cadastro Treinamento
+          </Link>
         </li>
         <li>
-          <Link to="/cadastro-treinamento">Cadastro de Treinamentos</Link>
+          <Link to="/matriz" style={styles.link}>
+            Matriz de Treinamento
+          </Link>
         </li>
         <li>
-          <Link to="/consolida-treinamento">Consolidação de Treinamentos</Link>
+          <Link to="/consolidacao" style={styles.link}>
+            Consolidação
+          </Link>
         </li>
       </ul>
     </nav>
   );
-};
+}
 
-export default Navbar;
+const styles = {
+  nav: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    backgroundColor: "#003366", // Azul escuro
+    padding: "10px 20px",
+    color: "white",
+  },
+  logo: {
+    height: "50px", // Tamanho do logotipo
+  },
+  menu: {
+    display: "flex",
+    listStyleType: "none",
+    margin: 0,
+    padding: 0,
+    gap: "15px",
+  },
+  link: {
+    textDecoration: "none",
+    color: "white",
+    fontWeight: "bold",
+  },

@@ -1,0 +1,55 @@
+/* Layout geral */
+.layout-container {
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  /* Cabeçalho */
+  .layout-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00509e; /* Azul escuro */
+    padding: 10px 20px;
+    color: white;
+  }
+  
+  .layout-header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .layout-nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .layout-nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Título principal */
+  .layout-title {
+    text-align: center;
+    margin: 20px 0;
+    color: #00509e; /* Azul escuro */
+  }
+  
+  /* Conteúdo principal */
+  .layout-content {
+    padding: 20px;
+    background-color: #f0f4f8; /* Cinza claro */
+    min-height: 70vh;
+  }
+  
+  /* Rodapé */
+  .layout-footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #00509e;
+    color: white;
+    margin-top: 20px;
+  }
+  

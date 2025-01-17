@@ -3,6 +3,27 @@
     font-family: Arial, sans-serif;
     color: #333;
   }
+
+  /* Estilo Geral da Logo */
+.logo {
+    height: auto;
+    max-height: 50px; /* Garantindo o tamanho fixo na altura */
+    width: auto;      /* Mantendo a proporção original */
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Logo no Navbar */
+  .layout-header .logo {
+    max-height: 50px;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .logo {
+      max-height: 40px; /* Redução adicional em telas menores */
+    }
+  }
   
   /* Cabeçalho */
   .layout-header {

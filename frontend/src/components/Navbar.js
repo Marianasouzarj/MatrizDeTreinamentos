@@ -1,30 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/images/cjato02.png"; // Importando o logotipo
+import logo from "../../assets/images/cjato02.jpg"; // Importando o logotipo
+import "./Navbar.css"; // Importando o arquivo de estilos específico
 
 function Navbar() {
   return (
-    <nav style={styles.nav}>
+    <nav className="navbar">
       {/* Exibindo o logotipo */}
-      <img src={logo} alt="Logotipo" style={styles.logo} />
-      <ul style={styles.menu}>
+      <img src={logo} alt="Logotipo" className="navbar-logo" />
+      <ul className="navbar-menu">
         <li>
-          <Link to="/cadastro-colaborador" style={styles.link}>
+          <Link to="/cadastro-colaborador" className="navbar-link">
             Cadastro Colaborador
           </Link>
         </li>
         <li>
-          <Link to="/cadastro-treinamento" style={styles.link}>
+          <Link to="/cadastro-treinamento" className="navbar-link">
             Cadastro Treinamento
           </Link>
         </li>
         <li>
-          <Link to="/matriz" style={styles.link}>
+          <Link to="/matriz" className="navbar-link">
             Matriz de Treinamento
           </Link>
         </li>
         <li>
-          <Link to="/consolidacao" style={styles.link}>
+          <Link to="/consolidacao" className="navbar-link">
             Consolidação
           </Link>
         </li>
@@ -33,27 +34,4 @@ function Navbar() {
   );
 }
 
-const styles = {
-  nav: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    backgroundColor: "#003366", // Azul escuro
-    padding: "10px 20px",
-    color: "white",
-  },
-  logo: {
-    height: "50px", // Tamanho do logotipo
-  },
-  menu: {
-    display: "flex",
-    listStyleType: "none",
-    margin: 0,
-    padding: 0,
-    gap: "15px",
-  },
-  link: {
-    textDecoration: "none",
-    color: "white",
-    fontWeight: "bold",
-  },
+export default Navbar;

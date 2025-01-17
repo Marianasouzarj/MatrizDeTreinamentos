@@ -9,7 +9,7 @@ import Consolida from "./pages/Consolida";
 function App() {
   return (
     <Router>
-      <Layout> {/* O Layout engloba as rotas para evitar duplicação */}
+      <Layout> {/* O Layout engloba o conteúdo */}
         <Routes>
           <Route path="/cadastro-colaborador" element={<CadastroColaborador />} />
           <Route path="/cadastro-treinamento" element={<CadastroTreinamento />} />
@@ -22,3 +22,4 @@ function App() {
 }
 
 export default App;
+

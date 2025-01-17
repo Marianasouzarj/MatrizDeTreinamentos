@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Layout from "../components/Layout";
+
 
 function CadastroTreinamento() {
   const [formData, setFormData] = useState({

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/cjato02.png";
+import logo from "../assets/images/cjato02.jpg";
 
 function Layout({ children }) {
   return (
@@ -18,9 +18,6 @@ function Layout({ children }) {
         </nav>
       </header>
 
-      {/* Título principal */}
-      <h1 className="layout-title">Matriz de Treinamento</h1>
-
       {/* Conteúdo principal */}
       <main className="layout-content">{children}</main>
 
@@ -33,3 +30,4 @@ function Layout({ children }) {
 }
 
 export default Layout;
+
